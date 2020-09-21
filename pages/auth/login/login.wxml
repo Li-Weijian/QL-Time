@@ -1,0 +1,13 @@
+<!--pages/auth/login/login.wxml-->
+<view class="logo-container">
+	<view class="header">
+		<image class="header-img" mode="widthFix" src="https://lovezz-app.oss-cn-shenzhen.aliyuncs.com/webImg/xr.png"></image>
+	</view>
+	<view class="login-view">
+	  <van-button color="linear-gradient(to right, #FFCCCC, #FF6666)" 
+								size="large" round custom-class="login-button"
+								open-type="getUserInfo"
+								bind:getuserinfo="getUserInfo"
+						>授权登录</van-button>
+	</view>
+</view>

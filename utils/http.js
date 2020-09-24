@@ -57,6 +57,7 @@ function gui(res, reject) {
     wx.removeStorageSync('name')
     wx.removeStorageSync('avatarUrl')
     wx.removeStorageSync('adminType')
+    wx.removeStorageSync('userInfo')
     wx.showToast({
       title: res.data.message,
       icon:'none',
@@ -103,13 +104,28 @@ module.exports = {
   gui:gui,
   param:param,
 
-  // 删除某个合同证据文件
-  test:params=>{
-    return fetchApi(`/noteController/getNoteList`, params, 'POST').then(res => res.data)
-  },
-
+  // 授权登录
   assistantToken: params=>{
     return fetchApi('/user/wxAuth', params, 'POST').then(res => res.data)
-  }
+  },
 
+  // 获取情侣数据
+  selectLover: params=>{
+    return fetchApi('/user/selectLover', params, 'GET', true).then(res => res.data);
+  },
+
+  // 设置在一起的时间
+  setTogetherTime: params=>{
+    return fetchApi('/user/setTogetherTime', params, 'POST').then(res => res.data);
+  },
+
+  // 关联另一半
+  setHalf: params => {
+    return fetchApi('/user/setHalf', params, 'POST').then(res => res.data);
+  },
+
+
+  test: params => {
+    return fetchApi('/noteController/getNoteList', params, 'POST').then(res => res.data);
+  }
 }

@@ -1,19 +1,51 @@
 {
   "pages": [
-
+    "pages/invite/invite",
     "pages/index/index",
     "pages/auth/login/login",
-    "pages/logs/logs"
+    "pages/we/we",
+    "pages/logs/logs",
+    "pages/play/play"
+
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "情侣时光",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#BFBFBF",
+    "selectedColor": "#DB639B",
+    "borderStyle": "black",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "./assets/images/home.png",
+        "selectedIconPath": "./assets/images/home-select.png"
+      },
+      {
+        "pagePath": "pages/play/play",
+        "text": "互动",
+        "iconPath": "./assets/images/play.png",
+        "selectedIconPath": "./assets/images/play-select.png"
+      },
+      {
+        "pagePath": "pages/we/we",
+        "text": "我们",
+        "iconPath": "./assets/images/we.png",
+        "selectedIconPath": "./assets/images/we-select.png"
+      }
+    ]
   },
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
     "van-button": "@vant/weapp/button/index",
-    "van-image": "@vant/weapp/image/index"
+    "van-image": "@vant/weapp/image/index",
+    "van-datetime-picker": "@vant/weapp/datetime-picker/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-dialog": "@vant/weapp/dialog/index"
   }
 }

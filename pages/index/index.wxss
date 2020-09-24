@@ -1,21 +1,19 @@
-/**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* pages/auth/login.wxss */
+page{
+  overflow:scroll;
 }
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.index-container{
+	width: 100%;
+	height: 100%;
+  overflow:scroll;
 }
-
-.userinfo-nickname {
-  color: #aaa;
+.header{
+  width: 100%;
+  height: 100%;
+  position:absolute;
+	z-index: -1;
 }
-
-.usermotto {
-  margin-top: 200px;
+.header-img{
+  width: 100%;
+  height: 100%;
 }

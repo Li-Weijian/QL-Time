@@ -124,6 +124,20 @@ module.exports = {
     return fetchApi('/user/setHalf', params, 'POST').then(res => res.data);
   },
 
+  // 保存或者更新小约定
+  savaOrUpdateContent: params => {
+    return fetchApi('/noteController/savaContent', params).then (res => res.data);
+  },
+
+  // 查询约定列表
+  getNoteList: params => {
+    return fetchApi('/noteController/getNoteList', params).then(res => res.data);
+  },
+
+  // 根据id查询约定
+  selectNote: params => {
+    return fetchApi('/noteController/selectNote', params, 'GET', true).then(res => res.data);
+  },
 
   test: params => {
     return fetchApi('/noteController/getNoteList', params, 'POST').then(res => res.data);

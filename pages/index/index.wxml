@@ -2,8 +2,8 @@
 <view class="index-container">
   <view class="header">
     <!-- <image class="header-img" mode="aspectFill" src="../../assets/images/index-xr.png"></image> -->
-    <image class="header-img" mode="scaleToFill"
-      src="https://lovezz-app.oss-cn-shenzhen.aliyuncs.com/webImg/459e-fypyuvc1962502.jpg"></image>
+    <image class="header-img" mode="aspectFill"
+      src="https://lovezz-app.oss-cn-shenzhen.aliyuncs.com/webImg/bg2.jpg"></image>
   </view>
 
   <view class="padding margin-top">
@@ -12,9 +12,9 @@
   <view class="flex p-xs margin-bottom-sm mb-sm margin-top-xl">
     <view class="cu-avatar lg round margin-left-xl" style="background-image:url('{{lovers.myself.avatarUrl}}');"></view>
 
-    <view class="flex-twice padding-sm margin-xs radius" wx:if="{{lovers.myself.togetheTime}}">
+    <view class="flex-twice padding-sm margin-xs radius " wx:if="{{lovers.myself.togetheTime}}" >
       <view class="solid-bottom text-lg margin-left-xl">
-        <text class="text-white text-bold ">你们已经在一起 <text class="text-pink text-bold text-xxl">{{lovers.day}}</text> 天</text>
+        <text class="text-white text-bold">你们已经在一起 <text class="text-pink text-bold text-xxl">{{lovers.day}}</text> 天</text>
       </view>
     </view>
     <view class="flex-twice padding-sm margin-xs radius" wx:else bindtap="showPopup">

@@ -1,12 +1,14 @@
 {
   "pages": [
     "pages/invite/invite",
+    "pages/play/play",
     "pages/index/index",
     "pages/auth/login/login",
     "pages/we/we",
     "pages/logs/logs",
-    "pages/play/play"
-
+    "pages/note/note",
+    "pages/tops/tops",
+    "pages/memory/memory"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -46,6 +48,11 @@
     "van-image": "@vant/weapp/image/index",
     "van-datetime-picker": "@vant/weapp/datetime-picker/index",
     "van-popup": "@vant/weapp/popup/index",
-    "van-dialog": "@vant/weapp/dialog/index"
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-overlay": "@vant/weapp/overlay/index",
+    "van-action-sheet": "@vant/weapp/action-sheet/index"
   }
 }

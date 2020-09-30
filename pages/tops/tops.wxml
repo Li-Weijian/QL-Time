@@ -1,2 +1,78 @@
 <!--pages/tops/tops.wxml-->
-<text>pages/tops/tops.wxml</text>
+<view class="cu-card dynamic {{isCard?'no-card':''}}">
+  <view class="cu-item shadow" wx:for="{{list}}" wx:key="{{item.tops.id}}" wx:for-item="item">
+    <!-- 个人信息 -->
+    <view class="cu-list menu-avatar">
+      <view class="cu-item">
+        <view class="cu-avatar round lg" style="background-image:url('{{item.tops.avatarUrl}}');"></view>
+        <view class="content flex-sub">
+          <view>{{item.tops.nickName}}</view>
+          <view class="text-gray text-sm flex justify-between">
+            {{item.tops.createTime}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 内容 -->
+    <view class="text-content" style="max-height: none">
+      {{item.tops.content}}
+    </view>
+    <!-- 图片 -->
+    <view class="grid flex-sub padding-lr {{isCard?'col-3 grid-square':'col-1'}}" wx:if="{{item.galleryList != null}}">
+      <view class="bg-img " style="background-image:url({{gallery.url + '?x-oss-process=image/auto-orient,1/quality,q_60'}});" bindtap="previewImage" 
+      wx:for="{{item.galleryList}}"  wx:for-item="gallery" wx:key="{{gallery.id}}" data-url="{{gallery.url}}" data-gallerylist="{{item.galleryList}}">
+      </view>
+    </view>
+    <!-- 操作区 -->
+    <view class="text-gray text-sm text-right padding">
+      <text class="cuIcon-messagefill margin-lr-xs" bindtap="showDialog" data-flag="0" data-id="{{item.tops.id}}">评论</text>
+      <text class="cuIcon-deletefill margin-lr-xs" bindtap="showDialog" bindtap="showAndDeteleTops" data-flag="0" data-id="{{item.tops.id}}">删除</text>
+    </view>
+
+    <!-- 评论区 -->
+    <view class="cu-list comment solids-top" wx:if="{{item.commentsList != null}}">
+      <view class="cu-item" wx:for="{{item.commentsList}}" wx:for-item="comment" wx:key="{{comment[0].id}}" style="margin-bottom: -30rpx">
+        <view class="content padding">
+          <view class="bg-gray radius text-sm padding-sm">
+              <view class="margin-bottom-xs" wx:for="{{comment}}" wx:for-item="subcomment" wx:key="{{subcomment.id}}" 
+              bindlongpress="handleLongPress" bindtap="showDialog" data-flag="1" data-id="{{subcomment.id}}" data-userid="{{subcomment.userId}}">
+              {{subcomment.content}}
+            </view>
+          </view>
+          <!-- <view class="margin-top-sm flex justify-between">
+            <view class="text-gray text-df">2018年12月4日</view>
+            <view>
+              <text class="cuIcon-appreciatefill text-red"></text>
+              <text class="cuIcon-messagefill text-gray margin-left-sm"></text>
+            </view>
+          </view> -->
+        </view>
+      </view>
+    </view>
+     <!-- 分隔线-->
+     <van-divider contentPosition="center" borderColor="#1989fa">
+      <text class="text-red">❤</text> 
+      </van-divider>
+  </view>
+
+  <van-dialog id="van-dialog" />
+  <van-toast id="van-toast" />
+  <view class="cu-load {{isLoad?'loading':'over'}}"></view>
+
+  <van-dialog
+          use-slot
+          show="{{ dialogShow }}"
+          bind:confirm="saveContext"
+          bind:cancel="cancelDialog"
+          title="评论"
+          show-cancel-button>
+          <van-field model:value="{{ context }}" placeholder="请在这里输入内容"/>
+  </van-dialog>
+</view>
+
+<!--圆形点击框  -->
+<view class="round-click">
+   <!-- <navigator url='pages/tops/publish'>  -->
+    <text class="cuIcon-roundaddfill" bindtap="toPubilsh"></text>
+  <!-- </navigator > -->
+</view>

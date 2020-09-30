@@ -34,7 +34,6 @@ Page({
             success: function (info_res) {
               // 2. 小程序通过wx.request()发送code到开发者服务器
               accessToken(login_res.code, info_res.encryptedData, info_res.iv, info_res.signature, info_res.rawData).then(res => {
-                console.log("res : ", res)
                 wx.setStorageSync('userInfo', res.data)
                 //由于这里是网络请求，可能会在 Page.onShow 之后才返回
                 if(res.data.helfId == null){

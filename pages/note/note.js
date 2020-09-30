@@ -89,7 +89,6 @@ Page({
 
   // 保存
   saveContext(e) {
-    console.log(user.id)
     this.setData({
       loadModal: true
     })

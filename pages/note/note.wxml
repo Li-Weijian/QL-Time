@@ -21,7 +21,9 @@
 <!-- 加载 -->
 <van-overlay show="{{ loadModal }}">
   <view class="cu-load" style="display: flex; align-items: center;  justify-content: center; height: 100%;">
-    <image src="../../assets/images/loading.gif" mode="aspectFill"></image>
+    <!-- <image src="../../assets/images/loading.gif" mode="aspectFill"></image> -->
+    <!-- <image src="https://file.digitaling.com/eImg/uimages/20160802/1470137311494929.gif" mode="aspectFill"></image> -->
+    <van-loading  color="#1989fa" size="80px"/>
   </view>
 </van-overlay>
 

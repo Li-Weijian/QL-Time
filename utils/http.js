@@ -139,6 +139,26 @@ module.exports = {
     return fetchApi('/noteController/selectNote', params, 'GET', true).then(res => res.data);
   },
 
+  // 获取小日常
+  selectTopsList: params => {
+    return fetchApi('/tops/getTopsList', params, 'GET', true).then(res => res.data);
+  },
+
+  // 添加评论
+  doCommont: params => {
+    return fetchApi('/tops/doCommont', params, 'GET').then(res => res.data);
+  },
+
+  // 删除约定
+  deleteTops: params => {
+    return fetchApi('/tops/deleteTops', params, 'GET').then(res => res.data);
+  },
+
+  // 发表小日常
+  publishTops: params => {
+    return fetchApi('/tops/publishTopsByWx', params, 'POST').then(res => res.data);
+  },
+
   test: params => {
     return fetchApi('/noteController/getNoteList', params, 'POST').then(res => res.data);
   }

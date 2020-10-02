@@ -1,16 +1,17 @@
 {
   "pages": [
-
+    "pages/we/we",
     "pages/invite/invite",
+    "pages/memory/publish",
+    "pages/memory/memory",
     "pages/tops/publish",
     "pages/tops/tops",
     "pages/play/play",
     "pages/index/index",
     "pages/auth/login/login",
-    "pages/we/we",
+
     "pages/logs/logs",
-    "pages/note/note",
-    "pages/memory/memory"
+    "pages/note/note"
 
   ],
   "window": {

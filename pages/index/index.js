@@ -43,10 +43,6 @@ Page({
    */
   onLoad: function (options) {
     user = wx.getStorageSync('userInfo');
-    if(user == ''){
-      this.onLoad();
-    }
-
     api.selectLover(user.id).then(res => {
       this.setData({
         lovers: res.data

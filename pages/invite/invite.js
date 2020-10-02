@@ -98,19 +98,22 @@ Page({
 
   selectExistHelf() {
     api.selectLover(user.id).then(res => {
-      if(res.data.helf != null){
-        // Dialog.alert({
-        //   message: '恭喜你，来到你们两个人的世界 ~',
-        //   theme: 'round-button',
-        // }).then(() => {
-        //   wx.switchTab({
-        //     url: '/pages/index/index'
-        //   })
-        // });
-        wx.switchTab({
-          url: '/pages/index/index'
-        })
+      if(res.status == 200){
+        if(null != res.data.helf){
+          // Dialog.alert({
+          //   message: '恭喜你，来到你们两个人的世界 ~',
+          //   theme: 'round-button',
+          // }).then(() => {
+          //   wx.switchTab({
+          //     url: '/pages/index/index'
+          //   })
+          // });
+          wx.switchTab({
+            url: '/pages/index/index'
+          })
+        }
       }
+     
     })
   },
 

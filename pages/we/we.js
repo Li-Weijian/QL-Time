@@ -1,17 +1,34 @@
 // pages/we/we.js
+const api = require('../../utils/http.js')
+let user = wx.getStorageSync('userInfo');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    lovers: {},
+    statistics: {}
+    
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    user = wx.getStorageSync('userInfo');
+    api.selectLover(user.id).then(res => {
+      this.setData({
+        lovers: res.data
+      })
+    })
+
+    api.selectAllCount().then(res => {
+      this.setData({
+        statistics: res.data
+      })
+
+    })
 
   },
 

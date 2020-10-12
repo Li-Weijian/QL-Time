@@ -1,8 +1,6 @@
 
-export const API_URI = `http://localhost:8091`; //开发域名 http
-// export const API_URI = `https://localhost:8443`; //开发域名 https
-// export const API_URI = `https://39.106.156.28:8443`; //生产域名 https
-// export const API_URI = `http://39.106.156.28:9090`; //生产域名 https
+export const API_URI = `http://192.168.31.247:8091`; //开发域名 https
+// export const API_URI = `https://qltime.top:8443`; //生产域名 https
 
 // 请求函数
 const fetchApi = (type, params, method, after, resType) => {
@@ -170,6 +168,11 @@ module.exports = {
   // 保存回忆
   saveMemory: params => {
     return fetchApi('/galleryController/saveMemory', params, 'POST').then(res => res.data);
+  },
+
+  //获取相关模块数据统计
+  selectAllCount: params => {
+    return fetchApi('/statistics/', params, 'GET').then(res => res.data);
   },
 
   test: params => {

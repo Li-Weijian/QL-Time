@@ -1,2 +1,43 @@
 <!--pages/we/we.wxml-->
-<text>pages/we/we.wxml</text>
+<view class="bg-img align-center"
+  style="background-image: radial-gradient(879px at 10.4% 22.3%, rgb(255, 235, 238) 0%, rgb(186, 190, 245) 93.6%);">
+  <!-- 头像 -->
+  <view class="grid col-3 text-center">
+    <view class="padding-sm margin-top">
+      <view class="cu-avatar xl round margin-left"
+        style="background-image:url({{lovers.myself.avatarUrl}});">
+      </view>
+      <view class="margin-left margin-top">{{lovers.myself.username}}</view>
+    </view>
+    <view class="padding-xl margin-top-xl">
+      <van-image width="40" height="40" src="../../../../assets/images/love.png" />
+    </view>
+    <view class="padding margin-top">
+      <view class="cu-avatar xl round margin-left"
+        style="background-image:url({{lovers.helf.avatarUrl}});">
+      </view>
+      <view class="margin-left margin-top">{{lovers.helf.username}}</view>
+    </view>
+  </view>
+
+  <view class="flex">
+    <view class="flex-treble radius">
+      <view class="cu-list grid col-3 no-border" style="background-color:rgba(0,0,0,0); padding: 0">
+        <view class="cu-item">
+          <text class="text-bold" style="color: #FF6666; font-size: 38rpx">{{statistics.noteCount}}</text>
+          <text class="text-bold text-black">约定</text>
+        </view>
+
+        <view class="cu-item">
+          <text class="text-bold" style="color: #FF6666; font-size: 38rpx">{{statistics.topsCount}}</text>
+          <text class="text-bold text-black">日常</text>
+        </view>
+
+        <view class="cu-item">
+          <text class="text-bold" style="color: #FF6666; font-size: 38rpx">{{statistics.memoryCount}}</text>
+          <text class="text-bold text-black">记忆</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

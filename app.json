@@ -9,10 +9,8 @@
     "pages/play/play",
     "pages/index/index",
     "pages/auth/login/login",
-
     "pages/logs/logs",
     "pages/note/note"
-
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -61,6 +59,8 @@
     "van-loading": "@vant/weapp/loading/index",
     "van-divider": "@vant/weapp/divider/index",
     "van-toast": "@vant/weapp/toast/index",
-    "van-uploader": "@vant/weapp/uploader/index"
+    "van-uploader": "@vant/weapp/uploader/index",
+    "van-grid": "@vant/weapp/grid/index",
+    "van-grid-item": "@vant/weapp/grid-item/index"
   }
 }

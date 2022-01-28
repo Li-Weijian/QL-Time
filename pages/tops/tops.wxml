@@ -68,11 +68,11 @@
           show-cancel-button>
           <van-field model:value="{{ context }}" placeholder="请在这里输入内容"/>
   </van-dialog>
-</view>
 
+  
 <!--圆形点击框  -->
 <view class="round-click">
-   <!-- <navigator url='pages/tops/publish'>  -->
     <text class="cuIcon-roundaddfill" bindtap="toPubilsh"></text>
-  <!-- </navigator > -->
 </view>
+</view>
+

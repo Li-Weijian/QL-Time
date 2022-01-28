@@ -1,5 +1,6 @@
 // pages/we/we.js
 const api = require('../../utils/http.js')
+import Dialog from '../../miniprogram_npm/@vant/weapp/dialog/dialog';
 let user = wx.getStorageSync('userInfo');
 Page({
 
@@ -8,8 +9,54 @@ Page({
    */
   data: {
     lovers: {},
-    statistics: {}
+    statistics: {},
+    sheetShow: true,
     
+  },
+
+  /**
+   * 关于
+   */
+  openInfo: function(e){
+    Dialog.alert({
+      title: '关于',
+      message: "此程序由Liweijian独立开发，如果觉得体验良好，请给我点个赞~",
+      // theme: 'round-button',
+    }).then(() => {
+  })
+
+  },
+
+  /**
+   * 解除关系
+   */
+  clearRelationship: function(e){
+
+    Dialog.confirm({
+      title: '确定要解除情侣关系吗？',
+      message: "解除关系之后，你们的所有记录将消失，请谨慎操作",
+      // theme: 'round-button',
+    }).then(() => {
+      //确认
+      api.clearRelationship().then(res => {
+        Dialog.alert({
+          message: '最熟悉的陌生人，谢谢你曾经来过。'
+        }).then(() => {
+          wx.clearStorageSync('userInfo')
+          wx.navigateTo({
+            url: '/pages/invite/invite',
+          })
+        });
+      })
+  })
+},
+
+  navigateToPage: function(e){
+    var url = e.currentTarget.dataset.url;
+    wx.navigateTo({
+      url: url,
+    })
+
   },
 
   /**

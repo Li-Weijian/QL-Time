@@ -1,6 +1,6 @@
 
-export const API_URI = `http://192.168.31.247:8091`; //开发域名 https
-// export const API_URI = `https://qltime.top:8443`; //生产域名 https
+// export const API_URI = `http://http://gitfever.cn:8091`; //开发域名 https
+export const API_URI = `https://qltime-1592774-1305852875.ap-shanghai.run.tcloudbase.com`; //生产域名 https
 
 // 请求函数
 const fetchApi = (type, params, method, after, resType) => {
@@ -173,6 +173,21 @@ module.exports = {
   //获取相关模块数据统计
   selectAllCount: params => {
     return fetchApi('/statistics/', params, 'GET').then(res => res.data);
+  },
+
+  // 修改个人信息
+  saveUserInfo: params => {
+     return fetchApi('/user/saveUserInfo', params, 'POST').then(res => res.data);
+  },
+
+  //获取相关模块数据统计
+  getUserInfo: params => {
+     return fetchApi('/user/getUserInfo', params, 'GET').then(res => res.data);
+  },
+
+  //解除情侣关系
+  clearRelationship: params => {
+     return fetchApi('/user/clearRelationship', params, 'GET').then(res => res.data);
   },
 
   test: params => {

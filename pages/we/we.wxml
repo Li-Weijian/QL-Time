@@ -41,3 +41,28 @@
     </view>
   </view>
 </view>
+
+<view class="cu-list menu sm-border card-menu margin-top" >
+				<view class="cu-item arrow" bindtap="navigateToPage" data-url="/pages/we/editInfo">
+					<view class="content">
+						<text class="cuIcon-edit"  style="color: #FF6666; font-size: 38rpx"></text>
+						<text class="text-black">修改个人资料</text>
+					</view>
+        </view>
+        
+        <!-- <view class="cu-item arrow" bindtap="clearRelationship">
+					<view class="content">
+						<text class="cuIcon-bad" style="color: #FF6666; font-size: 38rpx"></text>
+						<text class="text-black">解除情侣关系</text>
+					</view>
+        </view> -->
+        
+        <view class="cu-item arrow" bindtap="openInfo" >
+					<view class="content">
+						<text class="cuIcon-emoji"  style="color: #FF6666; font-size: 38rpx"></text>
+						<text class="text-black">关于</text>
+					</view>
+				</view>
+  </view>
+  
+  <van-dialog id="van-dialog" />

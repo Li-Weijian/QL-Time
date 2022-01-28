@@ -33,15 +33,15 @@ Page({
     swiperList: [{
       id: 0,
       type: 'image',
-      url: 'http://lovezz-app.oss-cn-shenzhen.aliyuncs.com/topsImg/1583684732418.jpg'
+      url: 'https://lovezz-app.oss-cn-shenzhen.aliyuncs.com/webImg/src%3Dhttp___img.jj20.com_up_allimg_512_100512123610_121005123610-8-1200.jpg%26refer%3Dhttp___img.jj20.jpeg'
     }, {
       id: 1,
       type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84001.jpg',
+      url: 'https://lovezz-app.oss-cn-shenzhen.aliyuncs.com/webImg/d9fcb449fa428b1cc001b40527b99076.jpg',
     }, {
       id: 2,
       type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big39000.jpg'
+      url: 'https://lovezz-app.oss-cn-shenzhen.aliyuncs.com/webImg/0.jpg'
     }],
   },
 

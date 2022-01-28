@@ -1,6 +1,7 @@
 {
   "pages": [
-    "pages/we/we",
+
+
     "pages/invite/invite",
     "pages/memory/publish",
     "pages/memory/memory",
@@ -10,7 +11,11 @@
     "pages/index/index",
     "pages/auth/login/login",
     "pages/logs/logs",
-    "pages/note/note"
+    "pages/note/note",
+    "pages/we/we",
+    "pages/we/editInfo"
+
+
   ],
   "window": {
     "backgroundTextStyle": "light",

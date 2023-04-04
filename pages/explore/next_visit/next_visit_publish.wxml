@@ -1,0 +1,29 @@
+<!--pages/explore/next_visit/next_visit_publish.wxml-->
+
+<form bindsubmit="bindSubmit">
+  <view class="cu-form-group margin-top">
+		<view class="title">店铺名称</view>
+		<input name="name" placeholder="输入一下店铺名称方便查看哦"></input>
+	</view>
+
+  <view class="cu-form-group align-start">
+		<view class="title">店铺描述</view>
+		<textarea name="describe"  maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaBInput" placeholder="记录下你的期待吧~"></textarea>
+	</view>
+
+  <view class="cu-form-group margin-top">
+		<view class="title">期待值</view>
+    <van-rate value="{{ value }}" name="expectation" bind:change="onChange" icon="like"
+  void-icon="like-o" />
+	</view>
+
+  <view class="cu-form-group">
+		<view class="title">地址</view>
+		<input placeholder="选择一下地址，避免以后找不到路哦" name="address" value="{{address.addrName}}"></input>
+		<text class="cuIcon-locationfill text-orange" bindtap="showSelector"></text>
+	</view>
+  
+  <van-button class="margin-top" size="large" form-type="submit" type="info" color="#FF9999" disabled="{{disabled}}">保存
+  </van-button>
+
+</form>

@@ -1,0 +1,14 @@
+<!--pages/explore/component/explore_tabbar.wxml-->
+<view class="box explore-box">
+  <view class="cu-bar tabbar bg-white">
+
+  <block  wx:for="{{tabBar}}" wx:key="{{tabBar.pagePath}}">
+    <navigator class="action" open-type="redirect" url="{{item.pagePath}}"> 
+      <view class="cuIcon-cu-image">
+        <image src="{{item.iconPath}}"></image>
+      </view>
+      <view class="text-green">{{item.text}}</view>
+    </navigator>
+  </block>
+  </view>
+</view>

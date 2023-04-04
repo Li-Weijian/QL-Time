@@ -1,0 +1,36 @@
+<!--pages/tops/publish.wxml-->
+<view class="cu-form-group margin-top">
+    <textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaAInput" placeholder="请输入你现在的想法 ~"></textarea>
+</view>
+
+<view class="cu-bar bg-white margin-top">
+		<view class="action"></view>
+		<view class="action">
+			{{imgList.length}}/9
+		</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="grid col-3 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+				<image src='{{imgList[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<9}}">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+    </view>
+	</view>
+
+<van-button class="margin-top" size="large" type="info" color="#FF9999" bindtap="publishTops" disabled="{{disabled}}">{{buttonText}}</van-button>
+
+
+<!-- 加载 -->
+<van-overlay show="{{ loadModal }}">
+  <view class="cu-load" style="display: flex; align-items: center;  justify-content: center; height: 100%;">
+    <!-- <image src="../../assets/images/loading.gif" mode="aspectFill"></image> -->
+    <!-- <image src="https://file.digitaling.com/eImg/uimages/20160802/1470137311494929.gif" mode="aspectFill"></image> -->
+    <van-loading  color="#1989fa" size="80px" vertical>图片上传中</van-loading>
+  </view>
+</van-overlay>

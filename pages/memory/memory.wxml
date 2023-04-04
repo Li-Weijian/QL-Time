@@ -1,0 +1,26 @@
+<!--pages/memory/memory.wxml-->
+
+<view class="flex-sub text-center">
+  <view class="solid-bottom text-xl padding">
+    <text class="text-pink text-bold">你们已经拥有 {{count}} 个回忆啦 ~</text>
+  </view>
+</view>
+
+<scroll-view enable-flex="true" scroll-y class='content'>
+  <view class='left'>
+    <block wx:for="{{leftList}}" wx:key="index">
+      <image class='pic' style='height:{{item.CoverHeight}}' src='{{item.Cover}}' lazy-load="true"
+        bindtap="previewImage" data-url="{{item.Cover}}"></image>
+    </block>
+  </view>
+  <view class='right'>
+    <block wx:for="{{rightList}}" wx:key="index">
+      <image class='pic' style='height:{{item.CoverHeight}}' src='{{item.Cover}}' lazy-load="true"
+        bindtap="previewImage" data-url="{{item.Cover}}"></image>
+    </block>
+  </view>
+</scroll-view>
+
+
+<!--圆形点击框  -->
+<round_click bind:redirectToPage="toPublish"></round_click>

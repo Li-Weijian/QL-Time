@@ -1,0 +1,21 @@
+<view class="logo-container">
+  <view class="header">
+    <image class="header-img" mode="aspectFill" src="../../assets/images/timg.jpg"></image>
+  </view>
+  <view class="login-view">
+      
+      <view class="padding-xl">
+				<view class="padding radius text-center light bg-cyan radius " >
+          <view class="text-lg text-bold">欢迎来到情侣时光</view>
+          <view class="margin-top-sm text-grey ">这里是属于你们两个人的空间</view>
+          <!-- <view class="margin-top-sm text-grey ">(下拉刷新查看匹配进度)</view> -->
+				</view>
+			</view>
+
+    <van-button color="linear-gradient(to right, #FFCCCC, #FF6666)" size="large" round custom-class="login-button"
+    open-type="share">邀请另一半</van-button>
+  </view>
+
+  <van-dialog id="van-dialog" />
+
+</view>

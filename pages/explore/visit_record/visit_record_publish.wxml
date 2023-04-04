@@ -1,0 +1,42 @@
+<!--pages/explore/visit_record/visit_record_publish.wxml-->
+
+
+<form bindsubmit="bindSubmit">
+  <!-- 图片 -->
+  <view class="cu-form-group">
+  <view class="grid col-3 grid-square flex-sub">
+    <view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+      <image src='{{imgList[index]}}' mode='aspectFill'></image>
+      <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+        <text class="cuIcon-close"></text>
+      </view>
+    </view>
+    <view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<18}}">
+      <text class="cuIcon-cameraadd"></text>
+    </view>
+  </view>
+</view>
+ 
+  <!-- 标题 -->
+  <view class="cu-form-group margin-top">
+		<input name="title" placeholder="保持输入标题的习惯你会更可爱~"></input>
+	</view>
+  <!-- 正文 -->
+	<view class="cu-form-group">
+		<textarea maxlength="-1" name="content" disabled="{{modalName!=null}}" bindinput="textareaAInput" placeholder="请大胆发表你的看法~"></textarea>
+	</view>
+
+  
+  <van-button class="margin-top" size="large" form-type="submit" type="info" color="#FF9999" bindtap="saveMemory" disabled="{{disabled}}">{{buttonText}}
+  </van-button>
+</form>
+
+
+
+
+<!-- 加载 -->
+<van-overlay show="{{ loadModal }}">
+  <view class="cu-load" style="display: flex; align-items: center;  justify-content: center; height: 100%;">
+    <van-loading color="#1989fa" size="80px" vertical>图片上传中</van-loading>
+  </view>
+</van-overlay>

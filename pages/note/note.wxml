@@ -1,0 +1,62 @@
+<!--pages/note/note.wxml-->
+
+<!-- 轮播图 -->
+<swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true"
+  interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+  <swiper-item wx:for="{{swiperList}}" wx:key="id" class="{{cardCur==index?'cur':''}}">
+    <view class="swiper-item">
+      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+      <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover"
+        wx:if="{{item.type=='video'}}"></video>
+    </view>
+  </swiper-item>
+</swiper>
+
+<!-- 表单 -->
+<view class="cu-form-group">
+  <input placeholder="亲爱哒，请输入你们的约定 ~ " name="context" bindinput="contextInput"></input>
+  <button class='cu-btn bg-pink shadow' bindtap="saveContext">保存</button>
+</view>
+
+<!-- 加载 -->
+<van-overlay show="{{ loadModal }}">
+  <view class="cu-load" style="display: flex; align-items: center;  justify-content: center; height: 100%;">
+    <!-- <image src="../../assets/images/loading.gif" mode="aspectFill"></image> -->
+    <!-- <image src="https://file.digitaling.com/eImg/uimages/20160802/1470137311494929.gif" mode="aspectFill"></image> -->
+    <van-loading  color="#1989fa" size="80px"/>
+  </view>
+</van-overlay>
+
+<!-- 列表 -->
+<view class="cu-list menu sm-border margin-top">
+  <view class="cu-item" wx:for="{{noteList}}" wx:key="id" wx:for-item="note">
+    <view class="content padding-tb-sm">
+      <view>
+        <text class="cuIcon-btn text-blue" wx:if="{{note.isComplete == 0}}"></text>
+        <text class="cuIcon-roundcheckfill text-olive" wx:if="{{note.isComplete == 1}}"></text>
+        <text class="text-blue margin-right-xs"></text>{{note.context}}
+      </view>
+      <view class="text-gray text-sm">
+        <view class='cu-tag bg-orange light  round'>{{note.realname}}</view>
+        <text class=" margin-right-xs"></text> {{note.date}}
+      </view>
+    </view>
+    <view class="action">
+      <button class="cu-btn cuIcon" style="background-color: #FFF" bindtap="openTab" data-id="{{note.id}}" data-iscomplete="{{note.isComplete}}">
+        <text class="cuIcon-more"></text>
+      </button>
+    </view>
+  </view>
+</view>
+
+<!-- 弹出 -->
+<van-action-sheet show="{{ sheetShow }}" actions="{{ actions }}" cancel-text="取消" bind:select="onSelect"
+  bind:cancel="onCancel" />
+
+<van-dialog use-slot bind:confirm="saveContext" bind:cancel="cancelDialog" show="{{ dialogShow }}" title="修改约定"
+  show-cancel-button>
+  <van-field value="{{context}}" placeholder="请在这里输入修改内容"  bind:change="onChange"/>
+</van-dialog>
+
+<view class="cu-load {{isLoad?'loading':'over'}}"></view>
+<van-dialog id="van-dialog" />

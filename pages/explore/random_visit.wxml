@@ -1,0 +1,6 @@
+<!--pages/explore/random_visit.wxml-->
+<image style="display: block;margin: 0 auto;" src="/assets/images/loading.png"></image>
+
+<view class="explore_tabbar">
+  <explore_tabbar></explore_tabbar>
+</view>

@@ -1,0 +1,37 @@
+<!--pages/auth/login/login.wxml-->
+<view class="index-container">
+  <view class="header">
+    <!-- <image class="header-img" mode="aspectFill" src="../../assets/images/index-xr.png"></image> -->
+    <image class="header-img" mode="aspectFill"
+      src="https://lovezz-app.oss-cn-shenzhen.aliyuncs.com/webImg/WechatIMG57402.jpeg"></image>
+  </view>
+
+  <view class="padding margin-top">
+  </view>
+
+  <view class="flex p-xs margin-bottom-sm mb-sm margin-top-xl">
+    <view class="cu-avatar lg round margin-left-xl" style="background-image:url('{{lovers.myself.avatarUrl}}');"></view>
+
+    <view class="flex-twice padding-sm margin-xs radius " wx:if="{{lovers.myself.togetheTime}}" >
+      <view class="solid-bottom text-lg margin-left-xl">
+        <text class="text-white text-bold">你们已经在一起 <text class="text-pink text-bold text-xxl">{{lovers.day}}</text> 天</text>
+      </view>
+    </view>
+    <view class="flex-twice padding-sm margin-xs radius" wx:else bindtap="showPopup">
+      <view class="solid-bottom text-lg margin-left-xl">
+        <text class="text-white text-bold">请输入你们在一起的日子</text>
+      </view>
+    </view>
+
+    <view class="cu-avatar lg round margin-right-xl" style="background-image:url('{{lovers.helf.avatarUrl}}');">
+    </view>
+  </view>
+
+  <van-popup show="{{ show }}" round position="bottom" custom-style="height: 40%" bind:close="onClose">
+    <van-datetime-picker type="datetime" value="{{ currentDate }}" bind:confirm="onConfirm" title="选择时间"
+      bind:cancel="onClose" />
+
+  </van-popup>
+
+
+</view>

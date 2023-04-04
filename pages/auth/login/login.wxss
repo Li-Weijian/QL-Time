@@ -1,0 +1,27 @@
+/* pages/auth/login.wxss */
+page{
+  overflow:scroll;
+}
+.logo-container{
+	width: 100%;
+	height: 100%;
+  overflow:scroll;
+}
+.header{
+  width: 100%;
+  height: 100%;
+  position:absolute;
+	z-index: -1;
+}
+.header-img{
+  width: 100%;
+  height: 100%;
+}
+
+.login-button {
+  margin-top: calc(100vh - 275rpx);
+}
+
+.login-view {
+  padding: 10%;
+}

@@ -33,6 +33,7 @@ App({
 
   globalData: {
     userInfo: null,
+    lovers: {}
   },
 
 })

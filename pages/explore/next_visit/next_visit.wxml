@@ -1,0 +1,6 @@
+<!--pages/explore/next_visit.wxml-->
+<text>pages/explore/next_visit.wxml</text>
+
+<view class="explore_tabbar">
+  <explore_tabbar></explore_tabbar>
+</view>

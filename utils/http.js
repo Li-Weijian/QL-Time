@@ -1,6 +1,6 @@
 
-// export const API_URI = `http://http://gitfever.cn:8091`; //开发域名 https
-export const API_URI = `https://qltime-1592774-1305852875.ap-shanghai.run.tcloudbase.com`; //生产域名 https
+export const API_URI = `http://192.168.2.159:8091`; //开发域名 https
+// export const API_URI = `http://www.qltime.top:8091`; //生产域名 https
 
 // 请求函数
 const fetchApi = (type, params, method, after, resType) => {
@@ -8,7 +8,7 @@ const fetchApi = (type, params, method, after, resType) => {
     if (wx.getStorageSync('token')) {
       var header = {
         'content-type': 'application/json',
-        // 'Cookie': wx.getStorageSync('token')
+        'token': wx.getStorageSync('token')
       }
     } else {
       var header = {
@@ -190,7 +190,37 @@ module.exports = {
      return fetchApi('/user/clearRelationship', params, 'GET').then(res => res.data);
   },
 
-  test: params => {
-    return fetchApi('/noteController/getNoteList', params, 'POST').then(res => res.data);
-  }
+  //获取探店记录列表
+  getVisitRecordList: params => {
+    return fetchApi('/visitRecord/list', params, 'GET').then(res => res.data);
+  },
+
+   //获取探店记录列表
+   getvisitRecordDetail: params => {
+    return fetchApi('/visitRecord/detail', params, 'GET').then(res => res.data);
+  },
+
+  /**
+   * 获取探店记录评论
+   * @param {探店记录ID} params 
+   */
+  getVisitRecordComment: params => {
+    return fetchApi('/visitRecordComment/commentDetail', params, 'GET').then(res => res.data);
+  },
+
+  /**
+   * 评论探店记录
+   * @param {} params 
+   */
+  doVisitRecordCommont: params => {
+    return fetchApi('/visitRecordComment/doComment', params, 'POST').then(res => res.data);
+  },
+
+   /**
+   * 删除探店评论
+   * @param {} params 
+   */
+  deleteVisitRecordComment: params => {
+    return fetchApi('/visitRecordComment/delete', params, 'POST').then(res => res.data);
+  },
 }

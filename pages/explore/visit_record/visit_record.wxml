@@ -1,0 +1,40 @@
+<!--pages/explore/visit_record.wxml-->
+<view class="content">
+      <view class="left">
+        <block wx:for="{{visitRecordList}}" wx:key="id">
+          <template is="item" data="{{...item}}" wx:if="{{index%2==0}}"></template>
+        </block>
+      </view>
+      <view class="right">
+        <block wx:for="{{visitRecordList}}" wx:key="id">
+          <template is="item" data="{{...item}}" wx:if="{{index%2==1}}"></template>
+        </block>
+      </view>
+</view>
+
+<!--  下面是一个模块 -->
+<template name="item">
+  <view class="item" bindtap="visitRecordDetail" data-id="{{id}}">
+    <image class="item-img" src="{{imageList[0]}}" mode="widthFix"></image>
+    <view class="item-title-box">
+      <navigator url="url" class="item-title">{{title}}</navigator> 
+      <!-- <image class="arrow" src="/assets/images/like.png"></image>   -->
+    </view>
+    <view class="name">
+      <image class="item-ava" src="{{user.avatarUrl}}"></image>    
+      <text class="name-title">{{user.nickName}}</text>
+      <view class="heart_">
+        <!-- <image class="heart" src="/assets/images/like.png"></image> -->
+        <!-- <text>{{likeNum}}</text> -->
+      </view>
+    </view>
+  </view>
+</template>
+
+<!--圆形点击框  -->
+<round_click bind:redirectToPage="toPublish"></round_click>
+
+<!-- tab Bar -->
+<view class="explore_tabbar">
+  <explore_tabbar></explore_tabbar>
+</view>

@@ -1,0 +1,6 @@
+<!--components/round_click.wxml-->
+
+<!--圆形点击框  -->
+<view class="round-click">
+    <text class="cuIcon-roundaddfill" bindtap="redirectTo"></text>
+</view>

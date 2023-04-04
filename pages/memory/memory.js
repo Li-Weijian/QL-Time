@@ -21,7 +21,7 @@ Page({
   onLoad: function(options) {
     api.getMemoryList().then(res => {
       if (res.status == 200){
-      
+
         let noramalData = []
         let galleryList = res.data.galleryList;
         galleryList.forEach(element => {
@@ -51,7 +51,7 @@ Page({
   },
 
   // 跳转发布页面
-  toPubilsh(){
+  toPublish(){
     wx.redirectTo({
       url: '/pages/memory/publish',
     })
@@ -77,7 +77,7 @@ Page({
         rightH += currentItemHeight;
       }
     }
-  
+
     //更新左右两栏的数据以及累计高度
     that.setData({
       leftHight: leftH,

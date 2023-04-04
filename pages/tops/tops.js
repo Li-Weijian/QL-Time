@@ -12,8 +12,8 @@ Page({
   data: {
     id: "",
     isCard: true,
-    dialogShow: false, 
-    context: '', 
+    dialogShow: false,
+    context: '',
     isLoad: false,
     flag: "", //0： 说说， 1：评论
     page: 0, //请求第几页
@@ -91,7 +91,7 @@ Page({
   },
 
   // 跳转发布页面
-  toPubilsh(){
+  toPublish(){
     wx.redirectTo({
       url: '/pages/tops/publish',
     })
@@ -118,7 +118,7 @@ Page({
     }else {
       Toast('只允许操作自己的评论哟');
     }
-  }, 
+  },
 
   // 显示删除确认框并删除
   showAndDeteleTops(e){
